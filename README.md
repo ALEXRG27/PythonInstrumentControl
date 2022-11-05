@@ -114,7 +114,9 @@ Alternatively you can switch to a specific version using tags:
 ```
 python -m venv pyenv 
 ```
-\pyenv\Scripts\activate.bat
+```
+pyenv\Scripts\activate.ps1
+```
 
 From this point you are working into the virtual environment.
 
