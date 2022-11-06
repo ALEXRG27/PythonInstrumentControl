@@ -63,6 +63,7 @@ You can optionnaly also install [Tortoise Git](https://tortoisegit.org/download/
 
 ## VirtualBox / Ubuntu
 To avoid problems select skip unattended installation
+
 ![Ubuntu_1](./doc/VirtualBox/InstallVBox_1.png)
 
 Open terminal Ctrl+Alt+T
