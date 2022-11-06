@@ -96,6 +96,11 @@ sudo apt install python3-pip
 
 [Git](https://git-scm.com/downloads) is required to retrieve the project.
 
+Define:
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
 ## Cloning git repository
 
 !!! warning
