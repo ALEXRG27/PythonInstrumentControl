@@ -64,17 +64,24 @@ You can optionnaly also install [Tortoise Git](https://tortoisegit.org/download/
 ## VirtualBox / Ubuntu
 To avoid problems select skip unattended installation
 ![Ubuntu_1](./doc/VirtualBox/InstallVBox_1.png)
+
 Open terminal Ctrl+Alt+T
+
 If user not in sudoers list, access as root, and add user to sudoers list with visudo.
 
-Follow [HowToGuestAdditions](https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/) to install, guest additions
+Follow [HowToGuestAdditions](https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/) 
+to install, guest additions
 
 Once installed Turn off VM, go back to VM settings advanced, and shared clipboard to bidirectional.
+
 ![Ubuntu_1](./doc/VirtualBox/InstallVBox_2.png)
+
 Go to Network, and select Bridged:
+
 ![Ubuntu_3](./doc/VirtualBox/InstallVBox_3.png)
 
 If Guest additions was correctly installed, screen will resize automatically when expanding it.
+
 Open terminal and check if pyhton is installed
 ```bash
     python3 --version
