@@ -10,28 +10,16 @@ Functions to control laboratory intruments, like Power supplies, multimeters Sig
     - [Visual Studio Code additional extensions](#visual-studio-code-additional-extensions)
     - [Git](#git)
         - [Tortoise Git](#tortoise-git)
+    - [VirtualBox](#VirtualBox)
 - [Test Automation Project Installation](#emkeyfob-ui-project-installation)
     - [Cloning git repository](#cloning-git-repository)
     - [Checkout dev branch, which contains the last version of development](#checkout-dev-branch-which-contains-the-last-version-of-development)
     - [Setup Python for the project](#setup-python-for-the-project)
-- [Running GUI](#running-gui)
-- [Create your own custom UI](#create-your-own-custom-ui)
-    - [Create UI with Qt Designer](#create-ui-with-qt-designer)
-    - [Generate UI python code using Handler Generator](#generate-ui-python-code-using-handler-generator)
-    - [Add UI in config file](#add-ui-in-config-file)
-    - [Implementing and testing your code](#implementing-and-testing-your-code)
-- [Python API interface](#python-api-interface)
-    - [Read & Write memory](#read--write-memory)
-    - [Cached mode](#cached-mode)
-- [JTAG low level access](#jtag-low-level-access)
-    - [Code samples](#code-samples)
-- [Creating your own application with custom configuration](#creating-your-own-application-with-custom-configuration)
-- [Create release using installer](#create-release-using-installer)
 
 <!-- /TOC -->
 
 <!-- title -->
- <font size="6"> INBRAIN Test Automation</font>
+ <font size="6"> Test Automation</font>
 
 <!-- # Introduction
 To be completed... -->
@@ -40,10 +28,6 @@ To be completed... -->
 
 Python and Git are necessary for using the developement repository. An IDE  is also necessary for coding in Python.
 
-## VS Code Coding Pack for Python all-in-one
-
-Visual Studio code, Python and all required extensions and libraries can be installed at once with [Coding Pack for Python](https://code.visualstudio.com/learntocode)
-
 ## Python and VS Code separated installation
 
 If you already have Python, VS Code, or your want to use another IDE, you can follow this chapter to install only what you need.
@@ -51,8 +35,9 @@ If you already have Python, VS Code, or your want to use another IDE, you can fo
 ### Python
 
 Python 64 bits 3.11 . You can install
-the latest Python 3 release from [here](https://www.python.org/downloads/)
-Don't forget to setup environment variables
+the latest Python 3.11 release from [here](https://www.python.org/downloads/)
+Don't forget to setup environment variables, after installation.
+![Env_variables](./doc/EnvironmentVariables.png)
 
 ### Visual Studio Code (Optional)
 
@@ -65,19 +50,39 @@ extension.
 
 For more confort, you can also install these extensions in Visual Studio Code:
 
-[Align by RegEx](https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex)<br>
-Aligns selected lines of text by a regular expression.
-
-[Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)<br>
-A customizable extension for colorizing matching brackets
+Jira and Bitbucket (Atlassian Labs)
 
 ## Git
 
 Download [Git](https://git-scm.com/downloads) and install it on your system.
-
+```bash
+sudo apt-get install git-all 
+```
 ### Tortoise Git
+You can optionnaly also install [Tortoise Git](https://tortoisegit.org/download/) 
 
-You can optionnaly also install [Tortoise Git](https://tortoisegit.org/download/) which is the equivalent of Tortoise SVN vof Git.
+## VirtualBox / Ubuntu
+To avoid problems select skip unattended installation
+![Ubuntu_1](./doc/VirtualBox/InstallVBox_1.png)
+Open terminal Ctrl+Alt+T
+If user not in sudoers list, access as root, and add user to sudoers list with visudo.
+
+Follow [HowToGuestAdditions](https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/) to install, guest additions
+
+Once installed Turn off VM, go back to VM settings advanced, and shared clipboard to bidirectional.
+![Ubuntu_1](./doc/VirtualBox/InstallVBox_2.png)
+Go to Network, and select Bridged:
+![Ubuntu_3](./doc/VirtualBox/InstallVBox_3.png)
+
+If Guest additions was correctly installed, screen will resize automatically when expanding it.
+Open terminal and check if pyhton is installed
+```bash
+    python3 --version
+```
+Install pip
+```bash
+sudo apt install python3-pip
+```
 
 # TestAutomation Project Installation
 
@@ -116,7 +121,9 @@ python -m venv pyenv
 ```
 ```
 pyenv\Scripts\activate.ps1
+source pyenv/bin/activate
 ```
+
 
 From this point you are working into the virtual environment.
 
@@ -129,3 +136,4 @@ You can deactivate the environment with the command:
 ```bash
     (pyenv) TestAutomation> deactivate
 ```
+
